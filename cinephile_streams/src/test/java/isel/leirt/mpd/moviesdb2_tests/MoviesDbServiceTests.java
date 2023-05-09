@@ -87,6 +87,22 @@ public class MoviesDbServiceTests {
 	}
 
 	@Test
+	public void getActorsOfWestWorldMovieMultipleCallTest() {
+		int westWorldMovieId = 2362;
+		CounterRequest req = new CounterRequest(new HttpRequest());
+		MoviesDbService serv =
+			new MoviesDbService(new MoviesDbWebApi(req));
+
+		MovieDetail movie =
+			serv.getMovieDetail(westWorldMovieId);
+		assertEquals(1, req.getCount());
+		movie.getActors().forEach(System.out::println);
+		assertEquals(2, req.getCount());
+		movie.getActors().forEach(System.out::println);
+		assertEquals(3, req.getCount());
+	}
+
+	@Test
 	public void getRachelWoodMoviesTest() {
 		CounterRequest req = new CounterRequest(new HttpRequest());
 		MoviesDbService serv =
