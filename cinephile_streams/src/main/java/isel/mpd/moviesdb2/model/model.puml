@@ -31,7 +31,7 @@ class Genre {
 }
 
 Genre      o- "*" Movie : movies
-Movie   o- "*" Genre : genres
-Movie   o- "*" Actor : actors
+Movie      o- "*" Genre : genres
+Movie      o- "*" Actor : actors
 Actor      o- "*" Movie : movies
 @enduml

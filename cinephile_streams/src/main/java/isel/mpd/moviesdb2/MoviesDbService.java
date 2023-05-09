@@ -90,6 +90,9 @@ public class MoviesDbService {
 	private Genre dtoToGenre(GenreDto dto) {
 	    return new Genre(dto.getId(),
 		                 dto.getName(),
+						 // tente alterar este código para
+						 // poder especificar o máximo de filmes na
+						 // chamada ao método getMovies de Genre
 		                 searchByGenre(dto.getId(), 20));
 	}
 
