@@ -73,13 +73,4 @@ public interface StreamIterable<T> extends Iterable<T>  {
         return c;
     }
 
-    /*
-
-    default <U> U  reduce(U initial, BiFunction<T,U,U> acum) {
-        U result = initial;
-        for(T e : this)  result = acum.apply(e, result);
-        return result;
-    }
-
-     */
 }
